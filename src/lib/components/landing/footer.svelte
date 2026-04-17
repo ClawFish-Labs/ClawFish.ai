@@ -60,7 +60,7 @@
           </p>
 
           <a
-            href="/platform"
+            href="/app"
             class="mt-5 inline-flex rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-sm font-medium text-orange-300 transition hover:bg-orange-500/20 hover:text-white"
           >
             Try Clawfish
