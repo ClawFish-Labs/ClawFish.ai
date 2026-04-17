@@ -1,76 +1,41 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
-.globe-hologram {
-  position: relative;
-  width: min(100%, 36rem);
-  aspect-ratio: 1 / 1;
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #e5e7eb;
 }
-
-.globe-halo {
-  position: absolute;
-  inset: 8%;
-  border-radius: 9999px;
-  background: radial-gradient(circle, rgba(249,115,22,0.24) 0%, rgba(249,115,22,0.07) 38%, rgba(0,0,0,0) 72%);
-  filter: blur(26px);
-  animation: haloPulse 6s ease-in-out infinite;
+body { min-height: 100vh; }
+a { text-decoration: none; }
+.logo-mark {
+  display: flex; height: 2.25rem; width: 2.25rem; align-items: center; justify-content: center;
+  border-radius: 9999px; background: #f97316; color: #000; font-weight: 900;
 }
-
-.globe-scanlines {
-  position: absolute;
-  inset: 12%;
-  border-radius: 9999px;
-  pointer-events: none;
-  background-image: linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px);
-  background-size: 100% 8px;
-  opacity: 0.10;
-  mix-blend-mode: screen;
-  animation: scanMove 9s linear infinite;
+.reveal-pill, .reveal-title, .reveal-copy, .reveal-actions { animation: riseFade 700ms ease both; }
+.reveal-title { animation-delay: 80ms; }
+.reveal-copy { animation-delay: 180ms; }
+.reveal-actions { animation-delay: 260ms; }
+.hero-panel {
+  position: relative; width: min(100%, 36rem); border-radius: 2rem;
 }
-
-.globe-shell {
-  position: absolute;
-  inset: 4%;
-  border-radius: 9999px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.08);
-  background:
-    radial-gradient(circle at 35% 28%, rgba(255,255,255,0.05), rgba(255,255,255,0.01) 22%, rgba(0,0,0,0.92) 58%),
-    linear-gradient(180deg, rgba(249,115,22,0.04), rgba(0,0,0,0));
-  box-shadow:
-    0 0 0 1px rgba(249,115,22,0.08),
-    0 0 80px rgba(249,115,22,0.10),
-    0 28px 120px rgba(0,0,0,0.65);
+.hero-panel-glow {
+  position: absolute; inset: -10%; border-radius: 2rem;
+  background: radial-gradient(circle, rgba(249,115,22,0.18) 0%, rgba(0,0,0,0) 70%);
+  filter: blur(24px);
 }
-
-.globe-svg {
-  width: 100%;
-  height: 100%;
-  display: block;
+.hero-panel-inner {
+  position: relative; border-radius: 2rem; border: 1px solid rgba(255,255,255,0.10);
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.55));
+  padding: 1.5rem; box-shadow: 0 0 0 1px rgba(249,115,22,0.06), 0 24px 80px rgba(0,0,0,0.45);
 }
-
-.globe-spin {
-  transform-origin: 410px 410px;
-  animation: globeSpin 26s linear infinite;
-}
-
-@keyframes globeSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes haloPulse {
-  0%, 100% { opacity: 0.65; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.04); }
-}
-
-@keyframes scanMove {
-  from { background-position-y: 0; }
-  to { background-position-y: 48px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .globe-spin, .globe-halo, .globe-scanlines {
-    animation: none !important;
-  }
-}
+.hero-panel-top { display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
+.hero-dot { width: 0.5rem; height: 0.5rem; border-radius: 9999px; background: #f97316; box-shadow: 0 0 18px rgba(249,115,22,0.9); }
+.hero-panel-title { margin-top: 1.5rem; font-size: clamp(2rem, 5vw, 3.4rem); line-height: 1; font-weight: 700; color: #fff; letter-spacing: -0.04em; }
+.hero-panel-copy { margin-top: 1rem; max-width: 28rem; font-size: 0.95rem; line-height: 1.7; color: rgba(255,255,255,0.60); }
+.hero-panel-grid { margin-top: 1.5rem; display: grid; gap: 0.75rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.hero-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(255,255,255,0.35); }
+.hero-value { margin-top: 0.35rem; font-size: 0.98rem; font-weight: 600; color: #fff; }
+@keyframes riseFade { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .reveal-pill, .reveal-title, .reveal-copy, .reveal-actions { animation: none !important; } }
