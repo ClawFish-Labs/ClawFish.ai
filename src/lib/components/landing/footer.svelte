@@ -11,7 +11,7 @@
         </div>
 
         <p class="mt-5 max-w-sm text-sm leading-6 text-white/55">
-          A lightweight web frame for Clawfish Labs, built to stay clean, sharp, and easy to grow.
+          Clawfish Labs builds focused AI products with a clean, modern edge.
         </p>
 
         <div class="mt-6 flex flex-wrap items-center gap-3 text-xs text-white/35">
@@ -44,8 +44,8 @@
           <h3 class="text-sm font-semibold text-white">Status</h3>
           <ul class="mt-4 space-y-3 text-sm text-white/50">
             <li>Still in beta.</li>
-            <li>Nothing major is live yet.</li>
-            <li>Build phase only.</li>
+            <li>Built for the next release.</li>
+            <li>More soon.</li>
           </ul>
         </div>
       </div>
@@ -54,7 +54,7 @@
         <div class="rounded-3xl border border-white/10 bg-white/3 p-6">
           <p class="text-sm font-semibold text-white">Clawfish Labs</p>
           <p class="mt-3 text-sm leading-6 text-white/55">
-            The core work will live in ClawCore and ClawLibrary, while Clawfish stays as the web frame.
+            Product planning and core systems will grow from here.
           </p>
 
           <a href="/app" class="mt-5 inline-flex rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-sm font-medium text-orange-300 transition hover:bg-orange-500/20 hover:text-white">
