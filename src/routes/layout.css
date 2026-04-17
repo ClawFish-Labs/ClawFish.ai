@@ -1,196 +1,43 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
-
-html, body {
-  margin: 0;
-  padding: 0;
-  background: #000;
-  color: #e5e7eb;
-}
-
-body {
-  min-height: 100vh;
-}
-
-a {
-  text-decoration: none;
-}
-
-.logo-mark {
-  display: flex;
-  height: 2.25rem;
-  width: 2.25rem;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  background: #f97316;
-  color: #000;
-  font-weight: 900;
-}
-
-.metric-tile {
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 1rem;
-  background: rgba(0,0,0,0.4);
-  padding: 1rem;
-}
-
-.metric-label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: rgba(255,255,255,0.35);
-}
-
-.metric-value {
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #fff;
-}
-
-.reveal-pill, .reveal-title, .reveal-copy, .reveal-actions {
-  animation: riseFade 700ms ease both;
-}
-
-.reveal-title { animation-delay: 80ms; }
-.reveal-copy { animation-delay: 180ms; }
-.reveal-actions { animation-delay: 260ms; }
-
-.orbit-card {
+.globe-shell {
   position: relative;
   width: min(100%, 34rem);
   aspect-ratio: 1 / 1;
 }
 
-.orbit-glow {
+.globe-halo {
   position: absolute;
-  inset: 12%;
+  inset: 11%;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(249,115,22,0.2) 0%, rgba(249,115,22,0.06) 32%, rgba(0,0,0,0) 70%);
-  filter: blur(22px);
+  background: radial-gradient(circle, rgba(249,115,22,0.22) 0%, rgba(249,115,22,0.06) 35%, rgba(0,0,0,0) 72%);
+  filter: blur(20px);
   animation: pulseGlow 5s ease-in-out infinite;
 }
 
-.orbit-frame {
+.globe {
   position: absolute;
   inset: 8%;
   border-radius: 9999px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background:
-    radial-gradient(circle at center, rgba(249,115,22,0.04), rgba(0,0,0,0.92) 58%),
-    linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
   overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.04), rgba(0,0,0,0.04) 34%, rgba(0,0,0,0.9) 58%);
   box-shadow: 0 0 0 1px rgba(249,115,22,0.06), 0 25px 100px rgba(249,115,22,0.08);
-}
-
-.orbit-core {
-  position: absolute;
-  inset: 18%;
-  border-radius: 9999px;
-  background: radial-gradient(circle, rgba(249,115,22,0.18), rgba(0,0,0,0.04) 50%, rgba(0,0,0,0) 72%);
-  filter: blur(4px);
   animation: floatOrb 8s ease-in-out infinite;
 }
 
-.orbit-ring,
-.orbit-pulse,
-.orbit-needle {
-  position: absolute;
-  inset: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 9999px;
+.globe-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
-.orbit-ring-a {
-  width: 72%;
-  height: 26%;
-  border: 1px solid rgba(255,255,255,0.12);
-  transform: translate(-50%, -50%) rotate(16deg);
-  animation: spinSlow 18s linear infinite;
+.globe-rotate {
+  transform-origin: center;
+  animation: spinOrb 28s linear infinite;
 }
 
-.orbit-ring-b {
-  width: 82%;
-  height: 38%;
-  border: 1px solid rgba(255,255,255,0.08);
-  transform: translate(-50%, -50%) rotate(-28deg);
-  animation: spinSlow 26s linear reverse infinite;
-}
-
-.orbit-ring-c {
-  width: 52%;
-  height: 52%;
-  border: 1px solid rgba(249,115,22,0.14);
-  animation: pulseRing 4.5s ease-in-out infinite;
-}
-
-.orbit-pulse-a, .orbit-pulse-b, .orbit-pulse-c {
-  width: 14px;
-  height: 14px;
-  background: #f97316;
-  box-shadow: 0 0 18px rgba(249,115,22,0.9);
-  opacity: 0.95;
-}
-
-.orbit-pulse-a { top: 24%; left: 60%; animation: driftA 7s ease-in-out infinite; }
-.orbit-pulse-b { top: 66%; left: 28%; animation: driftB 8s ease-in-out infinite; }
-.orbit-pulse-c { top: 52%; left: 75%; animation: driftC 9s ease-in-out infinite; }
-
-.orbit-needle {
-  width: 2px;
-  height: 26%;
-  background: linear-gradient(180deg, rgba(249,115,22,0), rgba(249,115,22,0.9), rgba(249,115,22,0));
-  transform-origin: center center;
-  opacity: 0.7;
-}
-
-.orbit-needle-a { transform: translate(-50%, -50%) rotate(24deg); animation: spinSlow 14s linear infinite; }
-.orbit-needle-b { transform: translate(-50%, -50%) rotate(112deg); animation: spinSlow 19s linear reverse infinite; }
-.orbit-needle-c { transform: translate(-50%, -50%) rotate(204deg); animation: spinSlow 24s linear infinite; }
-
-@keyframes riseFade {
-  from { opacity: 0; transform: translateY(18px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes spinSlow {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@keyframes floatOrb {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.65; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
-}
-
-@keyframes pulseRing {
-  0%, 100% { opacity: 0.35; }
-  50% { opacity: 0.8; }
-}
-
-@keyframes driftA {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.2); }
-}
-
-@keyframes driftB {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.18); }
-}
-
-@keyframes driftC {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.15); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .reveal-pill, .reveal-title, .reveal-copy, .reveal-actions, .orbit-glow, .orbit-frame, .orbit-core, .orbit-ring, .orbit-pulse, .orbit-needle {
-    animation: none !important;
-  }
+@keyframes spinOrb {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
