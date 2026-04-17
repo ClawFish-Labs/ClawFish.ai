@@ -1,4 +1,4 @@
-<section class="mx-auto grid min-h-[85vh] max-w-7xl gap-12 px-4 py-24 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+<section class="mx-auto grid min-h-[85vh] max-w-7xl gap-12 px-4 py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
   <div class="max-w-3xl">
     <div class="reveal-pill mb-6 inline-flex items-center gap-2 rounded-full border border-orange-500/20 bg-orange-500/5 px-4 py-2 text-xs text-orange-300">
       Lightweight web frame for Clawfish Labs
@@ -14,7 +14,7 @@
     </p>
 
     <div class="reveal-actions mt-10 flex flex-wrap gap-4">
-      <a href="/app" class="rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-orange-400">
+      <a href="/platform" class="rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-orange-400">
         Open Platform
       </a>
       <a href="#features" class="rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/20 hover:bg-white/5">
@@ -24,70 +24,69 @@
   </div>
 
   <div class="relative flex justify-center lg:justify-end">
-    <div class="globe-shell">
+    <div class="globe-hologram">
       <div class="globe-halo"></div>
+      <div class="globe-scanlines"></div>
 
-      <div class="globe">
-        <svg viewBox="0 0 720 720" class="globe-svg" aria-hidden="true">
+      <div class="globe-shell">
+        <svg viewBox="0 0 820 820" class="globe-svg" aria-hidden="true">
           <defs>
-            <radialGradient id="globeShade" cx="50%" cy="42%" r="60%">
-              <stop offset="0%" stop-color="#1b120a" />
-              <stop offset="52%" stop-color="#0b0b0b" />
-              <stop offset="100%" stop-color="#030303" />
+            <radialGradient id="earthFill" cx="38%" cy="30%" r="62%">
+              <stop offset="0%" stop-color="#241609" stop-opacity="0.95" />
+              <stop offset="38%" stop-color="#111111" stop-opacity="0.96" />
+              <stop offset="100%" stop-color="#050505" stop-opacity="1" />
             </radialGradient>
 
-            <linearGradient id="continent" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#ffb36c" />
+            <radialGradient id="shine" cx="32%" cy="24%" r="58%">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.24" />
+              <stop offset="45%" stop-color="#ffffff" stop-opacity="0.08" />
+              <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+            </radialGradient>
+
+            <linearGradient id="land" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ffd3a8" />
               <stop offset="100%" stop-color="#f97316" />
             </linearGradient>
 
             <clipPath id="sphereClip">
-              <circle cx="360" cy="360" r="248" />
+              <circle cx="410" cy="410" r="275" />
             </clipPath>
           </defs>
 
-          <circle cx="360" cy="360" r="248" fill="url(#globeShade)" />
-          <circle cx="360" cy="360" r="248" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2" />
+          <circle cx="410" cy="410" r="275" fill="url(#earthFill)" />
+          <circle cx="410" cy="410" r="275" fill="url(#shine)" opacity="0.8" />
+          <circle cx="410" cy="410" r="275" fill="none" stroke="rgba(255,255,255,0.10)" stroke-width="2" />
 
-          <g clip-path="url(#sphereClip)" opacity="0.98">
-            <g class="globe-rotate">
-              <g fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.2">
-                <ellipse cx="360" cy="360" rx="220" ry="92" />
-                <ellipse cx="360" cy="360" rx="220" ry="142" />
-                <ellipse cx="360" cy="360" rx="220" ry="190" />
-                <path d="M120 360h480" />
-                <path d="M360 120v480" />
-                <path d="M160 250c65-36 335-36 400 0" />
-                <path d="M160 470c65 36 335 36 400 0" />
+          <g clip-path="url(#sphereClip)">
+            <g class="globe-spin">
+              <g fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.25">
+                <ellipse cx="410" cy="410" rx="245" ry="92" />
+                <ellipse cx="410" cy="410" rx="245" ry="144" />
+                <ellipse cx="410" cy="410" rx="245" ry="196" />
+                <path d="M140 410h540" />
+                <path d="M410 140v540" />
+                <path d="M166 268c74-50 414-50 488 0" />
+                <path d="M166 552c74 50 414 50 488 0" />
               </g>
 
-              <g fill="url(#continent)">
-                <path d="M182 250c16-22 42-37 74-43 30-6 59 5 74 23 10 12 14 31 8 44-8 18-31 29-54 30-28 1-40 13-53 31-16 22-46 33-76 26-28-7-51-24-56-46-6-27 10-53 37-65 11-5 33-3 46 0Z" />
-                <path d="M307 188c23-14 54-20 84-14 24 5 46 17 58 33 11 14 11 33 2 46-9 13-25 21-41 25-18 4-35 0-47 9-17 13-20 34-31 49-11 15-31 22-51 20-22-2-41-15-45-34-4-16 1-33 14-45 12-11 23-27 20-47-2-17 11-34 37-42Z" />
-                <path d="M452 255c21-11 48-14 72-7 21 6 39 20 49 37 9 15 10 33 3 48-10 20-32 33-56 36-20 3-32 12-44 25-16 17-41 24-65 18-21-5-37-18-42-35-5-18 1-35 13-48 12-13 22-28 22-45 0-17 15-28 48-29Z" />
-                <path d="M210 392c16-10 34-13 52-7 15 5 26 15 30 28 4 13 1 27-8 37-10 12-24 17-38 21-17 4-32 0-44-9-14-11-18-27-14-42 3-11 9-21 22-28Z" />
-                <path d="M353 390c17-11 38-15 58-11 18 4 32 14 39 28 7 14 6 30-2 42-10 15-28 23-47 26-21 4-39-1-51-13-11-11-14-24-11-39 3-14 2-24 14-33Z" />
-                <path d="M510 402c18-10 39-13 58-8 17 5 31 15 38 29 7 13 7 29 1 42-8 15-24 25-42 28-20 4-39 0-52-12-12-11-16-24-12-40 4-14 3-29 9-39Z" />
+              <g fill="url(#land)" opacity="0.94">
+                <path d="M190 274c22-18 51-31 87-38 34-6 65 0 86 15 14 11 21 28 18 43-4 19-22 31-43 37-22 7-40 9-53 20-15 13-17 31-29 45-15 18-39 28-68 27-31-1-61-13-73-34-11-20-8-43 6-60 11-12 15-38 69-55Z" />
+                <path d="M338 196c24-18 60-29 95-24 30 4 58 20 73 43 12 19 13 41 2 57-10 15-29 23-50 26-24 4-40 0-54 12-15 13-18 32-30 48-13 17-36 26-61 25-24-2-46-13-55-31-9-18-7-38 4-54 10-14 13-34 10-53-3-19 12-39 66-69Z" />
+                <path d="M518 238c27-14 57-19 86-14 26 5 49 18 62 38 11 16 13 35 6 50-8 18-28 31-51 35-21 4-35 12-45 26-13 18-34 28-57 28-24 0-44-10-53-28-8-16-6-34 4-49 10-14 15-31 15-48 1-17 9-29 33-38Z" />
+                <path d="M214 408c16-12 34-16 52-12 16 4 29 14 35 27 6 13 4 28-4 39-9 12-23 19-39 21-18 2-34-2-46-12-12-10-16-24-13-37 2-12 5-19 15-26Z" />
+                <path d="M370 402c19-13 42-17 64-13 20 4 35 14 42 29 7 14 7 30-2 42-9 14-26 23-46 26-23 3-43-2-56-15-12-11-16-26-13-41 3-15 2-21 11-28Z" />
+                <path d="M548 396c17-10 38-14 57-10 17 3 31 14 38 27 8 14 8 31 1 44-9 16-25 26-44 29-21 4-40 0-54-13-12-11-17-25-13-40 3-14 3-26 15-37Z" />
               </g>
 
-              <g opacity="0.7" fill="none" stroke="rgba(249,115,22,0.15)" stroke-width="2">
-                <path d="M145 295c70 34 360 34 430 0" />
-                <path d="M137 365c75 26 371 26 446 0" />
-                <path d="M150 435c68 18 352 18 420 0" />
+              <g fill="none" stroke="rgba(249,115,22,0.20)" stroke-width="2">
+                <path d="M150 315c82 34 438 34 520 0" />
+                <path d="M138 410c90 26 454 26 544 0" />
+                <path d="M150 505c82 18 438 18 520 0" />
               </g>
             </g>
-
-            <circle cx="360" cy="360" r="248" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2" />
-            <circle cx="360" cy="360" r="248" fill="url(#shine)" opacity="0.06" />
           </g>
 
-          <defs>
-            <radialGradient id="shine" cx="38%" cy="30%" r="55%">
-              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.35" />
-              <stop offset="45%" stop-color="#ffffff" stop-opacity="0.08" />
-              <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
-            </radialGradient>
-          </defs>
+          <circle cx="410" cy="410" r="275" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="2" />
         </svg>
       </div>
     </div>
