@@ -1,60 +1,58 @@
-<section class="mx-auto grid min-h-[85vh] max-w-7xl gap-12 px-4 py-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-  <div class="max-w-3xl">
-    <div class="reveal-pill mb-6 inline-flex items-center gap-2 rounded-full border border-orange-500/20 bg-orange-500/5 px-4 py-2 text-xs text-orange-300">
-      Clawfish Labs
+<script lang="ts">
+</script>
+
+<section id="home" class="relative min-h-screen overflow-hidden bg-black px-6 md:px-10 pt-32 pb-24">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_70%_45%_at_50%_18%,rgba(251,146,60,0.22)_0%,transparent_68%)]"></div>
+  <div class="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0.35)_55%,rgba(0,0,0,0.85)_100%)]"></div>
+
+  <div class="relative z-10 mx-auto flex min-h-[calc(100vh-8rem)] max-w-6xl flex-col items-center justify-center text-center">
+    <div class="mb-12 flex items-center justify-center">
+      <svg class="h-44 w-44 md:h-56 md:w-56 text-orange-400 drop-shadow-[0_0_35px_rgba(251,146,60,0.45)]" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="100" cy="100" r="74" stroke="currentColor" stroke-width="10" opacity="0.35"/>
+        <circle cx="100" cy="100" r="48" stroke="currentColor" stroke-width="10" opacity="0.7"/>
+        <path d="M100 58V142" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+        <path d="M69 84H131" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+        <path d="M75 116C84 102 92 94 100 94C108 94 116 102 125 116" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M100 28C139.66 28 172 60.34 172 100C172 139.66 139.66 172 100 172C60.34 172 28 139.66 28 100C28 60.34 60.34 28 100 28Z" stroke="currentColor" stroke-width="4" opacity="0.2"/>
+      </svg>
     </div>
 
-    <h1 class="reveal-title text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
-      Build with
-      <span class="text-orange-400">ClawFish</span>.
-    </h1>
-
-    <p class="reveal-copy mt-6 max-w-2xl text-base leading-7 text-white/60 sm:text-lg">
-      A sharp AI company brand built for clean products, strong systems, and a premium landing experience.
+    <p class="mb-6 text-sm md:text-base font-semibold uppercase tracking-[0.35em] text-orange-300/80">
+      ClawFish Labs
     </p>
 
-    <div class="reveal-actions mt-10 flex flex-wrap gap-4">
-      <a href="/platform" class="rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-black transition hover:bg-orange-400">
-        Open Platform
+    <h1 class="max-w-4xl text-5xl font-black leading-[0.92] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl">
+      Build the AI
+      <span class="block bg-linear-to-r from-orange-400 via-orange-300 to-white bg-clip-text text-transparent">
+        that commands attention.
+      </span>
+    </h1>
+
+    <p class="mt-8 max-w-2xl text-base leading-7 text-slate-300 md:text-lg">
+      ClawFish.ai is the shell for serious AI work: focused, fast, premium, and built to turn attention into product.
+    </p>
+
+    <div class="mt-12 flex flex-col items-center gap-4 sm:flex-row">
+      <a href="/try" class="rounded-2xl bg-orange-500 px-8 py-4 text-base font-bold text-black shadow-lg shadow-orange-500/25 transition hover:scale-[1.02] hover:bg-orange-400">
+        Try ClawFish
       </a>
-      <a href="#features" class="rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/20 hover:bg-white/5">
-        Explore Features
+      <a href="#features" class="rounded-2xl border border-orange-500/30 px-8 py-4 text-base font-semibold text-orange-200 transition hover:border-orange-400 hover:bg-orange-500/10">
+        View Features
       </a>
     </div>
-  </div>
 
-  <div class="relative flex justify-center lg:justify-end">
-    <div class="hero-panel">
-      <div class="hero-panel-glow"></div>
-      <div class="hero-panel-inner">
-        <div class="hero-panel-top">
-          <span class="hero-dot"></span>
-          <span>Clawfish Labs</span>
-        </div>
-
-        <div class="hero-panel-title">A better landing for a stronger brand.</div>
-        <p class="hero-panel-copy">
-          Minimal, premium, and ready for the next phase.
-        </p>
-
-        <div class="hero-panel-grid">
-          <div>
-            <div class="hero-label">Brand</div>
-            <div class="hero-value">Clawfish</div>
-          </div>
-          <div>
-            <div class="hero-label">Org</div>
-            <div class="hero-value">Clawfish Labs</div>
-          </div>
-          <div>
-            <div class="hero-label">Focus</div>
-            <div class="hero-value">AI products</div>
-          </div>
-          <div>
-            <div class="hero-label">State</div>
-            <div class="hero-value">Beta</div>
-          </div>
-        </div>
+    <div class="mt-16 grid w-full max-w-4xl grid-cols-1 gap-4 sm:grid-cols-3">
+      <div class="rounded-3xl border border-white/8 bg-white/5 p-5 text-left backdrop-blur-sm">
+        <p class="text-sm text-orange-300">Focused UI</p>
+        <p class="mt-2 text-slate-300">Minimal layout with strong hierarchy.</p>
+      </div>
+      <div class="rounded-3xl border border-white/8 bg-white/5 p-5 text-left backdrop-blur-sm">
+        <p class="text-sm text-orange-300">Premium Feel</p>
+        <p class="mt-2 text-slate-300">Dark palette with clean orange accents.</p>
+      </div>
+      <div class="rounded-3xl border border-white/8 bg-white/5 p-5 text-left backdrop-blur-sm">
+        <p class="text-sm text-orange-300">Built to Sell</p>
+        <p class="mt-2 text-slate-300">A landing page that feels like a product.</p>
       </div>
     </div>
   </div>
